@@ -12,20 +12,9 @@ var app = express()
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin",
-        "http://localhost:4200");
-    res.header("Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Methods",
-        "GET, POST, PUT, DELETE, OPTIONS");
-    res.header("Access-Control-Allow-Credentials", "true");
-    next();
-});
-
 // app.use(function (req, res, next) {
 //     res.header("Access-Control-Allow-Origin",
-//         "https://tk-movie-angular.herokuapp.com");
+//         "http://localhost:4200");
 //     res.header("Access-Control-Allow-Headers",
 //         "Origin, X-Requested-With, Content-Type, Accept");
 //     res.header("Access-Control-Allow-Methods",
@@ -33,6 +22,17 @@ app.use(function (req, res, next) {
 //     res.header("Access-Control-Allow-Credentials", "true");
 //     next();
 // });
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin",
+        "https://tk-map-angular.herokuapp.com");
+    res.header("Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods",
+        "GET, POST, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Credentials", "true");
+    next();
+});
 
 
 var session = require('express-session')
