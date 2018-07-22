@@ -3,9 +3,8 @@ var bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 
-const URL = 'mongodb://localhost/tk-map'
-// const URL = 'mongodb://admin:admin42@ds117691.mlab.com:17691/heroku_bh9clvbf';
-
+// const URL = 'mongodb://localhost/tk-map'
+const URL = 'mongodb://admin:admin42@ds147011.mlab.com:47011/heroku_mqnllqnv';
 mongoose.connect(URL);
 
 var app = express()
